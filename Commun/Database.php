@@ -13,8 +13,8 @@ namespace ExoHttp {
 
         function create($table, $params) {
             // Format keys and values to fit the SQL command
-            $keys = Format::ArrRefractor(array_keys($params));
-            $values = Format::ArrRefractor(array_keys($params), "", ":%s", ", ");
+            $keys = Format::ArrRefactor(array_keys($params));
+            $values = Format::ArrRefactor(array_keys($params));
 
             $cmd = "INSERT INTO `$table` ($keys) VALUES ($values)";
 
@@ -37,7 +37,7 @@ namespace ExoHttp {
 
             if ($columns != "*") {
                 //Get string of keys from params array
-                $col = Format::ArrRefractor($columns);
+                $col = Format::ArrRefactor($columns);
             } else {
                 $col = "*";
             }
@@ -46,7 +46,7 @@ namespace ExoHttp {
             $cmd = "SELECT $col FROM `$table`";
             if (!empty($whereCondition)) {
                 try {
-                    $cmd.= " WHERE (".$this->buildWhereCondition($whereCondition).")";
+                    $cmd.= "(".$this->buildWhereCondition($whereCondition).")";
                 } catch (\Exception $e) {
                     return json_encode(['Error' => $e->getMessage()]);
                 }
@@ -121,7 +121,7 @@ namespace ExoHttp {
                 $setDataStrings[] = "$column = :$column";
             }
 
-            return Format::ArrRefractor($setDataStrings, "", "%s", ", ");
+            return Format::ArrRefactor($setDataStrings, "", "%s, ", "");
         }
 
         function buildWhereCondition($conditions) {
@@ -146,7 +146,7 @@ namespace ExoHttp {
                     throw new \Exception('Invalid keys from JSON were sent');
                 }
             }
-            return Format::ArrRefractor($conditionStrings, " ", "%s", " AND");
+            return Format::ArrRefactor($conditionStrings, "WHERE", " %s AND");
         }
 
     }
