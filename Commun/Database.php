@@ -1,5 +1,4 @@
 <?php
-    require_once "Connection.php";
     class Database {
         private $dbh;
 

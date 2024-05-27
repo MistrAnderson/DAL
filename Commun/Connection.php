@@ -1,6 +1,4 @@
 <?php
-    require_once "SecuLib.php";
-
     use PDO;
 
     class Connection {
