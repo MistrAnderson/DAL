@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     class Path {
         static function PATH($file="") {
             return $_SERVER["DOCUMENT_ROOT"]."/".$file;
@@ -13,4 +12,3 @@ namespace ExoHttp {
             return self::SECURE_PATH()."credentials/".$file;
         }
     }
-}

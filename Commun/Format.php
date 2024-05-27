@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     class Format {
         static function ArrRefactor($arr, $prefix="", $dataType="`%s`", $suffix="", $sep=",") {
           $format = $dataType.$sep;
@@ -18,4 +17,3 @@ namespace ExoHttp {
             return $formattedArr;
         }
     }
-}

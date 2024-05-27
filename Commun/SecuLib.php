@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     require_once "Path.php";
     class SecuLib {
         public static function getCredentials($file) {
@@ -8,4 +7,3 @@ namespace ExoHttp {
         }
     }
 }
-

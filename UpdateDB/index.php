@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     // Refactor the string to match the class
     $str = str_replace("/index.php", "", $_SERVER['SCRIPT_NAME']);
     $str_again = str_replace("/API", "", $str);
@@ -11,4 +10,3 @@ namespace ExoHttp {
 
     $className = "\\ExoHttp\\".$class;
     new $className;
-}

@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     class SortLib {
         static function BubbleSortRecursive($arr, $indexOfLastElem) {
             if (gettype($arr) != "array") {
@@ -61,4 +60,3 @@ namespace ExoHttp {
             echo "\n";
         }
     }
-}

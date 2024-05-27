@@ -1,8 +1,4 @@
 <?php
-namespace ExoHttp {
-
-    use http\Exception;
-
     require_once "Connection.php";
     class Database {
         private $dbh;
@@ -150,4 +146,3 @@ namespace ExoHttp {
         }
 
     }
-}

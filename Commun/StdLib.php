@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     class StdLib{
         static function testNeededArgs($arrOfArgs, $classInstance) {
             foreach ($arrOfArgs as $arg) {
@@ -10,5 +9,12 @@ namespace ExoHttp {
             }
             return true;
         }
+
+        static function className($currDir="") {
+      // Refactor the string to match the class
+            $dirPath = str_replace("/index.php", "", $_SERVER['SCRIPT_NAME']);
+            $filePath = str_replace($currDir, "", $dirPath);
+
+            return str_replace("/", "", $filePath);
+        }
     }
-}

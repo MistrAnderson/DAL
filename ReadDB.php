@@ -1,13 +1,4 @@
 <?php
-namespace ExoHttp{
-    require_once "Service.php";
-    require_once "Commun/Format.php";
-    require_once "Commun/Database.php";
-    require_once "Commun/StdLib.php";
-
-    use ExoHttp\Database;
-    use ExoHttp\Service;
-
     class ReadDB extends Service {
         const NEEDED_ARGS = ["table", "columns"];
         const OPTIONAL_ARG = "filter";
@@ -26,5 +17,4 @@ namespace ExoHttp{
                 echo $db->read($this->{self::NEEDED_ARGS[0]}, $this->{self::NEEDED_ARGS[1]});
             }
         }
-    }
-}
+ }

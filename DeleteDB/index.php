@@ -1,14 +1,6 @@
 <?php
-namespace ExoHttp {
-    // Refactor the string to match the class
-    $str = str_replace("/index.php", "", $_SERVER['SCRIPT_NAME']);
-    $str_again = str_replace("/API", "", $str);
+    require_once "../autoload.php";
 
-    $class = str_replace("/", "", $str_again);
+    $class = StdLib::className("/DAL");
 
-    //dynamically require the file needed
-    require_once "../".$class.".php";
-
-    $className = "\\ExoHttp\\".$class;
-    new $className;
-}
+    new $class;

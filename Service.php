@@ -1,6 +1,4 @@
 <?php
-namespace ExoHttp {
-
   abstract class Service {
 
     const ALLOWED_ARGS = ["table", "params", "columns", "filter"];
@@ -32,4 +30,3 @@ namespace ExoHttp {
     }
     abstract function Trig();
   }
-}

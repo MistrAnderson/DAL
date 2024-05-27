@@ -1,5 +1,4 @@
 <?php
-namespace ExoHttp {
     require_once "SecuLib.php";
 
     use PDO;
@@ -19,4 +18,3 @@ namespace ExoHttp {
             return self::$instance;
         }
     }
-}
